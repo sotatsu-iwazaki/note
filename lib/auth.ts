@@ -11,7 +11,7 @@ export const auth = betterAuth({
     google: {
       prompt: "select_account",
       clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientKey: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }
   }
 });
