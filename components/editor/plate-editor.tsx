@@ -1,11 +1,12 @@
 'use client';
 
-import { normalizeNodeId } from 'platejs';
+import { normalizeNodeId, Value } from 'platejs';
 import { Plate, usePlateEditor } from 'platejs/react';
 
 import { BasicNodesKit } from '@/components/editor/plugins/basic-nodes-kit';
 import { Editor, EditorContainer } from '@/components/ui/editor';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { serializeMd } from '@platejs/markdown';
 
 export function PlateEditor() {
   const editor = usePlateEditor({
@@ -17,9 +18,6 @@ export function PlateEditor() {
     <TooltipProvider>
       <Plate
         editor={editor}
-        onValueChange={({ value }) => {
-          console.log('Plate value changed:', value);
-        }}
       >
         <EditorContainer>
           <Editor variant="demo" placeholder="Type..."/>
